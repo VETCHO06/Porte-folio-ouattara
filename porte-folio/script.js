@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
         .then(response => response.text())
         .then(data => {
             alert('Formulaire envoyé avec succès !');
-            console.log(data); // Afficher la réponse du serveur
+            console.log(data);
         })
         .catch(error => {
             console.error('Erreur :', error);
