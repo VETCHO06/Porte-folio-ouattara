@@ -344,10 +344,32 @@ footer p {
     color: #ff6f61;
 }
 
+#successMessage {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none; 
+}
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
+    header {
+        padding: 30px 20px;
+    }
+    
+    .skills-grid, .project-grid, .interests-grid, .contact-info {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
     .contact-item {
-        flex: 1 1 100%; /* Une colonne sur les petits écrans */
+        max-width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }

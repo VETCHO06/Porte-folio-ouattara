@@ -12,19 +12,29 @@ window.addEventListener('scroll', () => {
         }
     });
     document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault(); // Empêche l'envoi traditionnel du formulaire
+        e.preventDefault();
     
-        // Récupérer les données du formulaire
+        
         const formData = new FormData(this);
     
-        // Envoyer les données via AJAX
         fetch('traitement-formulaire.php', {
             method: 'POST',
             body: formData
         })
         .then(response => response.text())
         .then(data => {
-            alert('Formulaire envoyé avec succès !');
+            
+            const successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+            }
+    
+            setTimeout(() => {
+                if (successMessage) {
+                    successMessage.style.display = 'none';
+                }
+            }, 3000);
+    
             console.log(data);
         })
         .catch(error => {
