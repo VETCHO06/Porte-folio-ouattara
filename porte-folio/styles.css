@@ -177,22 +177,65 @@ section {
 
 #contact {
     background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 #contact h2 {
     margin-bottom: 40px;
     font-size: 2rem;
+    color: #333;
 }
 
-.contact-info {
-    text-align: left;
-    max-width: 600px;
+.contact-container {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.contact-info p {
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    flex: 1 1 calc(50% - 40px);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #ff6f61;
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    display: block; /* Pour centrer l'icône */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ff6f61;
 }
 
 footer {
@@ -292,7 +335,7 @@ footer p {
     display: none;
 }
 
-/* Responsive Design */
+/* Responsivité */
 @media (max-width: 768px) {
     header {
         padding: 80px 20px;
@@ -319,7 +362,8 @@ footer p {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
-    .contact-info {
+    .contact-item {
+        flex: 1 1 100%; /* Une colonne sur les petits écrans */
         max-width: 100%;
     }
 }
