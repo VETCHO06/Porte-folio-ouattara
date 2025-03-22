@@ -433,7 +433,7 @@ footer p {
     }
 
     .contact-item {
-        flex: 1 1 100%; /* Une colonne sur les petits écrans */
+        flex: 1 1 100%;
         max-width: 100%;
     }
 }
